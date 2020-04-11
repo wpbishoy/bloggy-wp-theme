@@ -1,0 +1,28 @@
+{
+    "name": "bloggy-wp-theme",
+    "version": "1.0.0",
+    "description": "An attractive and professional (yet free) WordPress blog-focused theme.",
+    "author": "BishoyA",
+    "license": "GPL-2.0-or-later",
+    "keywords": [
+        "WordPress",
+        "Theme"
+    ],
+    "homepage": "https://github.com/rb-bishoy/bloggy-wp-theme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rb-bishoy/bloggy-wp-theme.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rb-bishoy/bloggy-wp-theme/issues"
+    },
+    "devDependencies": {
+        "node-sass": "^4.13.1",
+        "@wordpress/scripts": "^7.2.0"
+    },
+    "scripts": {
+        "compile:css": "node-sass sass/style.scss style.css && node-sass sass/bootstrap/bootstrap.scss assets/bootstrap/bootstrap.css --output-style compressed && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+        "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+        "lint:js": "wp-scripts lint-js 'js/*.js'"
+    }
+}
