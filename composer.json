@@ -25,8 +25,8 @@
     },
     "scripts": {
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
-        "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-        "make-pot": "wp i18n make-pot . languages/_s.pot"
+        "lint:php": "@php ./vendor/bin/parallel-lint --exclude inc/acf --exclude .git --exclude vendor .",
+        "make-pot": "wp i18n make-pot . languages/bloggy.pot"
     },
     "support": {
         "issues": "https://github.com/rb-bishoy/bloggy-wp-theme/issues",

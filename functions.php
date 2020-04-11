@@ -7,9 +7,9 @@
  * @package Bloggy
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'BLOGGY_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'BLOGGY_VERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'bloggy_setup' ) ) :
@@ -141,15 +141,16 @@ add_action( 'widgets_init', 'bloggy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bloggy_scripts() {
-	wp_enqueue_style( 'bloggy-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'bloggy-style', get_stylesheet_uri(), array(), BLOGGY_VERSION );
 
-	// Bootstrap
-	wp_enqueue_style( 'bootstrap-4', get_template_directory_uri() . '/assets/bootstrap/bootstrap.css', array(), _S_VERSION );
-	wp_enqueue_script( 'bootstrap-4', get_template_directory_uri() . '/assets/bootstrap/bootstrap.bundle.min.js', array( 'jquery' ), _S_VERSION );
+	// Enqueue Bootstrap.
+	wp_enqueue_style( 'bootstrap-4', get_template_directory_uri() . '/assets/bootstrap/bootstrap.css', array(), BLOGGY_VERSION );
 
-	wp_enqueue_script( 'bloggy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'bootstrap-4', get_template_directory_uri() . '/assets/bootstrap/bootstrap.bundle.min.js', array( 'jquery' ), BLOGGY_VERSION, true );
 
-	wp_enqueue_script( 'bloggy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'bloggy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), BLOGGY_VERSION, true );
+
+	wp_enqueue_script( 'bloggy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), BLOGGY_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -163,21 +164,23 @@ define( 'BLOGGY_ACF_URL', get_stylesheet_directory_uri() . '/inc/acf/' );
 
 /**
  * Customize the url setting to fix incorrect asset URLs.
- * @param  string $url ACF URL
+ * 
+ * @param  string $url ACF URL custom ACF URL.
  * @return string      ACF URL
  */
 function bloggy_acf_settings_url( $url ) {
-    return BLOGGY_ACF_URL;
+	return BLOGGY_ACF_URL;
 }
 add_filter( 'acf/settings/url', 'bloggy_acf_settings_url' );
 
 /**
  * Hide the ACF admin menu item.
- * @param  boolean $show_admin
+ * 
+ * @param  boolean $show_admin Whether or not to show the menu.
  * @return boolean
  */
 function bloggy_acf_settings_show_admin( $show_admin ) {
-	return ( defined('ENV') && ENV == 'local' );
+	return ( defined( 'ENV' ) && ENV === 'local' );
 }
 add_filter( 'acf/settings/show_admin', 'bloggy_acf_settings_show_admin' );
 
