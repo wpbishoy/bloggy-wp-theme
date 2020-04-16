@@ -10,9 +10,13 @@
 	}
 
 	header {
+
 		&.site-header {
+
 			.main-navigation {
+
 				a {
+
 					&:hover {
 						color: $color_dark;
 						background: none;
@@ -29,7 +33,8 @@
 				.menu-item-has-children {
 					position: relative;
 					padding-right: 0;
-					&:after {
+
+					&::after {
 						position: absolute;
 						content: url($arrow_bottom);
 						right: 0;
@@ -37,8 +42,10 @@
 					}
 
 					ul {
+
 						.menu-item-has-children {
-							&:after {
+
+							&::after {
 								transform: rotate(-90deg);
 								right: 12px;
 							}

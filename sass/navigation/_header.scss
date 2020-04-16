@@ -1,4 +1,5 @@
 header {
+
 	&.site-header {
 		padding: 0 60px;
 		min-height: 80px;
@@ -7,6 +8,7 @@ header {
 		justify-content: space-between;
 
 		.site-branding {
+
 			.site-title {
 				margin: 0;
 				font-size: 1.8rem;
@@ -16,8 +18,8 @@ header {
 		}
 
 		.site-description-container {
-			margin-left: 10px
-			;
+			margin-left: 10px;
+
 			.site-description {
 				margin: 0;
 			}
