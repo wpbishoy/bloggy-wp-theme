@@ -149,7 +149,7 @@ function bloggy_scripts() {
 
 	wp_enqueue_style( 'bloggy-style', get_stylesheet_uri(), array(), BLOGGY_VERSION );
 
-	// TODO: Load colors condiyionally
+	// TODO: Load colors condiyionally.
 	wp_enqueue_style( 'theme_colors', get_template_directory_uri() . '/assets/colors/yellow.css', array(), BLOGGY_VERSION );
 	
 	wp_enqueue_script( 'bloggy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), BLOGGY_VERSION, true );

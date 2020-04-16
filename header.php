@@ -19,7 +19,7 @@
 
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class( array( 'bloggy-color-' . get_theme_mod( 'main_color' ) ?? 'yellow' ) ); ?>>
+<body <?php body_class( array( 'bloggy-color-' . ( get_theme_mod( 'main_color' ) ? get_theme_mod( 'main_color' ) : 'yellow' ) ) ); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bloggy' ); ?></a>
@@ -41,10 +41,10 @@
 		</div><!-- .site-branding -->
 		<div class="site-description-container">
 			<?php
-				$bloggy_description = get_bloginfo( 'description', 'display' );
-				if ( $bloggy_description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo $bloggy_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			$bloggy_description = get_bloginfo( 'description', 'display' );
+			if ( $bloggy_description || is_customize_preview() ) : 
+				?>
+				<p class="site-description"><?php echo $bloggy_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-description-container -->
 		<nav id="site-navigation" class="main-navigation">

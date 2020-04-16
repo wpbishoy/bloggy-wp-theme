@@ -34,11 +34,15 @@ function bloggy_customize_register( $wp_customize ) {
 
 	// Additional Theme Settings.
 
-	$wp_customize->add_setting( 'main_color', array(
-		'default' => 'yellow',
-	) );
+	$wp_customize->add_setting( 
+		'main_color', 
+		array(
+			'default' => 'yellow',
+		) 
+	);
 
-	$wp_customize->add_control( 'main_color', 
+	$wp_customize->add_control( 
+		'main_color', 
 		array(
 			'type'            => 'select',
 			'priority'        => 10, // Within the section.
@@ -51,7 +55,7 @@ function bloggy_customize_register( $wp_customize ) {
 				'red'    => __( 'Red', 'bloggy' ),
 				'blue'   => __( 'Blue', 'bloggy' ),
 				'green'  => __( 'Green', 'bloggy' ),
-			)
+			),
 		)
 	);
 }
