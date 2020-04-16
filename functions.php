@@ -141,13 +141,17 @@ add_action( 'widgets_init', 'bloggy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bloggy_scripts() {
-	wp_enqueue_style( 'bloggy-style', get_stylesheet_uri(), array(), BLOGGY_VERSION );
 
 	// Enqueue Bootstrap.
 	wp_enqueue_style( 'bootstrap-4', get_template_directory_uri() . '/assets/bootstrap/bootstrap.css', array(), BLOGGY_VERSION );
 
 	wp_enqueue_script( 'bootstrap-4', get_template_directory_uri() . '/assets/bootstrap/bootstrap.bundle.min.js', array( 'jquery' ), BLOGGY_VERSION, true );
 
+	wp_enqueue_style( 'bloggy-style', get_stylesheet_uri(), array(), BLOGGY_VERSION );
+
+	// TODO: Load colors condiyionally
+	wp_enqueue_style( 'theme_colors', get_template_directory_uri() . '/assets/colors/yellow.css', array(), BLOGGY_VERSION );
+	
 	wp_enqueue_script( 'bloggy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), BLOGGY_VERSION, true );
 
 	wp_enqueue_script( 'bloggy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), BLOGGY_VERSION, true );

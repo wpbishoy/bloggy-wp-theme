@@ -31,6 +31,29 @@ function bloggy_customize_register( $wp_customize ) {
 			)
 		);
 	}
+
+	// Additional Theme Settings.
+
+	$wp_customize->add_setting( 'main_color', array(
+		'default' => 'yellow',
+	) );
+
+	$wp_customize->add_control( 'main_color', 
+		array(
+			'type'            => 'select',
+			'priority'        => 10, // Within the section.
+			'section'         => 'colors', // Required, core or custom.
+			'label'           => __( 'Main Color', 'bloggy' ),
+			'description'     => __( 'Choose theme main color.', 'bloggy' ),
+			'active_callback' => 'is_front_page',
+			'choices'         => array(
+				'yellow' => __( 'Yellow', 'bloggy' ),
+				'red'    => __( 'Red', 'bloggy' ),
+				'blue'   => __( 'Blue', 'bloggy' ),
+				'green'  => __( 'Green', 'bloggy' ),
+			)
+		)
+	);
 }
 add_action( 'customize_register', 'bloggy_customize_register' );
 

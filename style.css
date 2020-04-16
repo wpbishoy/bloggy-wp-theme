@@ -43,13 +43,89 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
+/* Fonts ------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
 
 /*--------------------------------------------------------------
 # Elements
@@ -122,6 +198,117 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: 0.6em 1em 0.4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+header.site-header {
+	padding: 0 60px;
+	min-height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header.site-header .site-branding .site-title {
+	margin: 0;
+	font-size: 1.8rem;
+	font-weight: 700;
+}
+
+header.site-header .site-description-container {
+	margin-left: 10px;
+}
+
+header.site-header .site-description-container .site-description {
+	margin: 0;
+}
+
+header.site-header .main-navigation {
+	margin-left: auto;
+	width: auto;
+}
 
 /*--------------------------------------------------------------
 # Navigation
@@ -131,25 +318,32 @@ table {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #4169e1;
+	color: #404040;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	transition: 250ms all ease-in-out;
 }
 
 a:visited {
-	color: #800080;
+	color: #404040;
+	text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #191970;
+	color: #404040;
+	text-decoration: none;
 }
 
 a:focus {
 	outline: thin dotted;
+	text-decoration: none;
 }
 
 a:hover,
 a:active {
+	text-decoration: none;
 	outline: 0;
 }
 
@@ -177,6 +371,7 @@ a:active {
 	top: 100%;
 	left: -999em;
 	z-index: 99999;
+	background: #fff;
 }
 
 .main-navigation ul ul ul {
@@ -191,6 +386,7 @@ a:active {
 
 .main-navigation ul ul a {
 	width: 200px;
+	font-size: 16px;
 }
 
 .main-navigation ul li:hover > ul,
@@ -206,6 +402,14 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	padding: 10px;
+	font-size: 18px;
+	border: 0;
+	margin: 0 10px;
+}
+
+.main-navigation a:hover {
+	background: none;
 }
 
 /* Small menu. */
@@ -294,6 +498,83 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# Theme Colors
+--------------------------------------------------------------*/
+body.bloggy-color-yellow a {
+	border-color: #fecf3c;
+}
+
+body.bloggy-color-yellow a:hover {
+	background: #fecf3c;
+}
+
+body.bloggy-color-yellow header.site-header .main-navigation a:hover {
+	color: #ecb301;
+	background: none;
+}
+
+body.bloggy-color-yellow header.site-header .main-navigation .current_page_item > a,
+body.bloggy-color-yellow header.site-header .main-navigation .current-menu-item > a,
+body.bloggy-color-yellow header.site-header .main-navigation .current_page_ancestor > a,
+body.bloggy-color-yellow header.site-header .main-navigation .current-menu-ancestor > a {
+	border-bottom: 3px solid #fecf3c;
+}
+
+body.bloggy-color-yellow header.site-header .main-navigation .menu-item-has-children {
+	position: relative;
+	padding-right: 0;
+}
+
+body.bloggy-color-yellow header.site-header .main-navigation .menu-item-has-children::after {
+	position: absolute;
+	content: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.75391 5.26562C4.89062 5.40234 5.08203 5.40234 5.21875 5.26562L9.26562 1.24609C9.40234 1.13672 9.40234 0.917969 9.26562 0.78125L8.71875 0.261719C8.60938 0.125 8.39062 0.125 8.25391 0.261719L5 3.48828L1.71875 0.261719C1.58203 0.125 1.39062 0.125 1.25391 0.261719L0.707031 0.78125C0.570312 0.917969 0.570312 1.13672 0.707031 1.24609L4.75391 5.26562Z' fill='%23ecb301'/%3E%3C/svg%3E%0A");
+	right: 0;
+	top: 10px;
+}
+
+body.bloggy-color-yellow header.site-header .main-navigation .menu-item-has-children ul .menu-item-has-children::after {
+	transform: rotate(-90deg);
+	right: 12px;
+}
+
+body.bloggy-color-red a {
+	border-color: #ef4f65;
+}
+
+body.bloggy-color-red a:hover {
+	background: #ef4f65;
+}
+
+body.bloggy-color-red header.site-header .main-navigation a:hover {
+	color: #dd1430;
+	background: none;
+}
+
+body.bloggy-color-red header.site-header .main-navigation .current_page_item > a,
+body.bloggy-color-red header.site-header .main-navigation .current-menu-item > a,
+body.bloggy-color-red header.site-header .main-navigation .current_page_ancestor > a,
+body.bloggy-color-red header.site-header .main-navigation .current-menu-ancestor > a {
+	border-bottom: 3px solid #ef4f65;
+}
+
+body.bloggy-color-red header.site-header .main-navigation .menu-item-has-children {
+	position: relative;
+	padding-right: 0;
+}
+
+body.bloggy-color-red header.site-header .main-navigation .menu-item-has-children::after {
+	position: absolute;
+	content: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.75391 5.26562C4.89062 5.40234 5.08203 5.40234 5.21875 5.26562L9.26562 1.24609C9.40234 1.13672 9.40234 0.917969 9.26562 0.78125L8.71875 0.261719C8.60938 0.125 8.39062 0.125 8.25391 0.261719L5 3.48828L1.71875 0.261719C1.58203 0.125 1.39062 0.125 1.25391 0.261719L0.707031 0.78125C0.570312 0.917969 0.570312 1.13672 0.707031 1.24609L4.75391 5.26562Z' fill='%23ef4f65'/%3E%3C/svg%3E%0A");
+	right: 0;
+	top: 10px;
+}
+
+body.bloggy-color-red header.site-header .main-navigation .menu-item-has-children ul .menu-item-has-children::after {
+	transform: rotate(-90deg);
+	right: 12px;
+}
+
+/*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
@@ -361,6 +642,36 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.content-area {
+	float: left;
+	margin: 0 -25% 0 0;
+	width: 100%;
+}
+
+.site-main {
+	margin: 0 25% 0 0;
+}
+
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 25%;
+}
+
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+
+.no-sidebar .content-area {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.no-sidebar .site-main {
+	margin-right: 0;
+}
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -387,6 +698,11 @@ a:active {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.single-post .entry-content {
+	font-size: 1.2rem;
+	line-height: 1.7;
 }
 
 /*--------------------------------------------------------------

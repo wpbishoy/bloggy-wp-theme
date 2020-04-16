@@ -1,0 +1,31 @@
+header {
+	&.site-header {
+		padding: 0 60px;
+		min-height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.site-branding {
+			.site-title {
+				margin: 0;
+				font-size: 1.8rem;
+				font-weight: 700;
+			}
+
+		}
+
+		.site-description-container {
+			margin-left: 10px
+			;
+			.site-description {
+				margin: 0;
+			}
+		}
+
+		.main-navigation {
+			margin-left: auto;
+			width: auto;
+		}
+	}
+}

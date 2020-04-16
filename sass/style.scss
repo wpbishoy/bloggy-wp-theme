@@ -46,14 +46,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-// @import "normalize";
-
-/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-// @import "typography/typography";
+@import "typography/typography";
 
 /*--------------------------------------------------------------
 # Elements
@@ -63,7 +58,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-// @import "forms/forms";
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "navigation/header";
 
 /*--------------------------------------------------------------
 # Navigation
@@ -74,6 +74,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Accessibility
 --------------------------------------------------------------*/
 @import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Theme Colors
+--------------------------------------------------------------*/
+@import "colors/colors";
 
 /*--------------------------------------------------------------
 # Alignments

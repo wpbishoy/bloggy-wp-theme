@@ -1,0 +1,17 @@
+@import "theme-colors";
+
+body {
+	&.bloggy-color-yellow {
+		$theme_main_color: #fecf3c; // Main color
+		$arrow_bottom: "data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.75391 5.26562C4.89062 5.40234 5.08203 5.40234 5.21875 5.26562L9.26562 1.24609C9.40234 1.13672 9.40234 0.917969 9.26562 0.78125L8.71875 0.261719C8.60938 0.125 8.39062 0.125 8.25391 0.261719L5 3.48828L1.71875 0.261719C1.58203 0.125 1.39062 0.125 1.25391 0.261719L0.707031 0.78125C0.570312 0.917969 0.570312 1.13672 0.707031 1.24609L4.75391 5.26562Z' fill='%23ecb301'/%3E%3C/svg%3E%0A";
+
+		@include theme-colors($theme_main_color, $arrow_bottom);
+	}
+
+	&.bloggy-color-red {
+		$theme_main_color: #ef4f65; // Main color
+		$arrow_bottom: "data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.75391 5.26562C4.89062 5.40234 5.08203 5.40234 5.21875 5.26562L9.26562 1.24609C9.40234 1.13672 9.40234 0.917969 9.26562 0.78125L8.71875 0.261719C8.60938 0.125 8.39062 0.125 8.25391 0.261719L5 3.48828L1.71875 0.261719C1.58203 0.125 1.39062 0.125 1.25391 0.261719L0.707031 0.78125C0.570312 0.917969 0.570312 1.13672 0.707031 1.24609L4.75391 5.26562Z' fill='%23ef4f65'/%3E%3C/svg%3E%0A";
+
+		@include theme-colors($theme_main_color, $arrow_bottom);
+	}
+}

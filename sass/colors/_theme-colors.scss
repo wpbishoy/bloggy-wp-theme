@@ -1,0 +1,51 @@
+@mixin theme-colors($color, $arrow_bottom) {
+	$color_dark: darken($color, 15);
+
+	a {
+		border-color: $color;
+
+		&:hover {
+			background: $color;
+		}
+	}
+
+	header {
+		&.site-header {
+			.main-navigation {
+				a {
+					&:hover {
+						color: $color_dark;
+						background: none;
+					}
+				}
+
+				.current_page_item > a,
+				.current-menu-item > a,
+				.current_page_ancestor > a,
+				.current-menu-ancestor > a {
+					border-bottom: 3px solid $color;
+				}
+
+				.menu-item-has-children {
+					position: relative;
+					padding-right: 0;
+					&:after {
+						position: absolute;
+						content: url($arrow_bottom);
+						right: 0;
+						top: 10px;
+					}
+
+					ul {
+						.menu-item-has-children {
+							&:after {
+								transform: rotate(-90deg);
+								right: 12px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -19,8 +19,7 @@
 
 	<?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
+<body <?php body_class( array( 'bloggy-color-' . get_theme_mod( 'main_color' ) ?? 'yellow' ) ); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bloggy' ); ?></a>
@@ -38,13 +37,16 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$bloggy_description = get_bloginfo( 'description', 'display' );
-			if ( $bloggy_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $bloggy_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			?>
 		</div><!-- .site-branding -->
-
+		<div class="site-description-container">
+			<?php
+				$bloggy_description = get_bloginfo( 'description', 'display' );
+				if ( $bloggy_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $bloggy_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			<?php endif; ?>
+		</div><!-- .site-description-container -->
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bloggy' ); ?></button>
 			<?php
@@ -59,3 +61,4 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<div class="container">
